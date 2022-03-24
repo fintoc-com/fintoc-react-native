@@ -14,7 +14,8 @@
   "scripts": {
     "build": "run-p build:*",
     "build:scripts": "vite build",
-    "build:types": "tsc --emitDeclarationOnly"
+    "build:types": "tsc --project tsconfig.build.json --emitDeclarationOnly",
+    "lint": "eslint --ext .tx,.ts ."
   },
   "peerDependencies": {
     "react": "*",
@@ -25,7 +26,13 @@
     "@types/node": "^17.0.23",
     "@types/react": "^17.0.33",
     "@types/react-native": "^0.67.3",
+    "@typescript-eslint/eslint-plugin": "^5.16.0",
+    "@typescript-eslint/parser": "^5.16.0",
     "@vitejs/plugin-react": "^1.0.7",
+    "eslint": "^8.11.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-import-resolver-typescript": "^2.7.0",
+    "eslint-plugin-react": "^7.29.4",
     "npm-run-all": "^4.1.5",
     "typescript": "^4.5.4",
     "vite": "^2.8.0"

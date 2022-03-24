@@ -7,4 +7,4 @@ export const FINTOC_URLS = [FINTOC_WEBVIEW_URL, FINTOC_WIDGET_URL];
 export const EVENT_MAP = {
   'fintocwidget://succeeded': 'onSuccess',
   'fintocwidget://exit': 'onExit',
-} as WebViewEventMap
+} as WebViewEventMap;
