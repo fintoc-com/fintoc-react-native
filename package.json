@@ -1,7 +1,12 @@
 {
   "name": "fintoc-react-native",
-  "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
+  "repository": "https://github.com/fintoc-com/fintoc-react-native",
+  "license": "MIT",
+  "author": {
+    "name": "Daniel Leal",
+    "email": "daniel@fintoc.com"
+  },
   "main": "dist/main.umd.js",
   "module": "dist/main.es.js",
   "types": "dist/main.d.ts",
@@ -12,10 +17,12 @@
     }
   },
   "scripts": {
+    "bump!": "sh scripts/bump.sh",
     "build": "run-p build:*",
     "build:scripts": "vite build",
     "build:types": "tsc --project tsconfig.build.json --emitDeclarationOnly",
-    "lint": "eslint --ext .tx,.ts ."
+    "lint": "eslint --ext .tx,.ts .",
+    "version:get": "node -p \"require('./package.json').version\""
   },
   "peerDependencies": {
     "react": "*",
