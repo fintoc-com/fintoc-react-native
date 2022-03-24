@@ -1,0 +1,33 @@
+{
+  "name": "fintoc-react-native",
+  "private": true,
+  "version": "0.0.0",
+  "main": "dist/main.umd.js",
+  "module": "dist/main.es.js",
+  "types": "dist/main.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/main.umd.js",
+      "import": "./dist/main.es.js"
+    }
+  },
+  "scripts": {
+    "build": "run-p build:*",
+    "build:scripts": "vite build",
+    "build:types": "tsc --emitDeclarationOnly"
+  },
+  "peerDependencies": {
+    "react": "*",
+    "react-native": "*",
+    "react-native-webview": "*"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.23",
+    "@types/react": "^17.0.33",
+    "@types/react-native": "^0.67.3",
+    "@vitejs/plugin-react": "^1.0.7",
+    "npm-run-all": "^4.1.5",
+    "typescript": "^4.5.4",
+    "vite": "^2.8.0"
+  }
+}
