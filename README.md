@@ -33,10 +33,10 @@ yarn add @fintoc/fintoc-react-native
 `Fintoc React Native` exports a single component called `FintocWidgetWebView`. This is a React Native component that creates the same WebView from [the native WebView documentation](https://docs.fintoc.com/docs/widget-webview-integration#how-it-works). To use the WebView, use the following _snippet_:
 
 ```js
-import { FintocWebView } from 'fintoc-react-native';
+import { FintocWidgetWebView } from 'fintoc-react-native';
 ```
 
-After retrieving the `FintocWebView` component, you are ready to instantiate the widget:
+After retrieving the `FintocWidgetWebView` component, you are ready to instantiate the widget:
 
 ```js
 const options = { ... };
@@ -53,7 +53,7 @@ const handlers = {
 export default function FintocWidgetScreen() {
   return (
     <View>
-      <FintocWebView options={options} handlers={handlers} />
+      <FintocWidgetWebView options={options} handlers={handlers} />
     </View>
   );
 }
@@ -106,4 +106,4 @@ This will create a new branch with the updated version from `master`.
 
 ## Acknowledgements
 
-This implementation was written based on the input and experience of [**@marialuisaclaro**](https://github.com/marialuisaclaro) integrating the WebView to React Native, which served as a good starting point for the general idea of this library.
+This implementation was written based on the input and experience of [**@marialuisaclaro**](https://github.com/marialuisaclaro) integrating the WebView using React Native, which served as a good starting point for the general idea of this library.
