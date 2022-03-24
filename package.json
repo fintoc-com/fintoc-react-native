@@ -1,5 +1,5 @@
 {
-  "name": "fintoc-react-native",
+  "name": "@fintoc/fintoc-react-native",
   "version": "0.0.1",
   "repository": "https://github.com/fintoc-com/fintoc-react-native",
   "license": "MIT",
