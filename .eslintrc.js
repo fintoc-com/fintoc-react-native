@@ -16,7 +16,6 @@ module.exports = {
     ecmaVersion: 2021,
   },
   settings: {
-    'import/core-modules': ['react-native', 'react-native-webview'],
     'import/resolver': {
       node: {
         paths: ['src'],
@@ -30,7 +29,7 @@ module.exports = {
     },
   },
   rules: {
-    'import/no-extraneous-dependencies': ['error', { devDependencies: true, peerDependencies: true }],
+    'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
     'import/prefer-default-export': 'off',
     'import/extensions': [
       'error',
