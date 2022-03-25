@@ -98,11 +98,11 @@ Where `./path/to/fintoc-react-native-0.3.1.tgz` corresponds to the path to the `
 If you want to create a new _release_, you can run:
 
 ```sh
-git switch master
+git switch main
 npm run bump! <major|minor|patch>
 ```
 
-This will create a new branch with the updated version from `master`.
+This will create a new branch with the updated version from `main`.
 
 ## Acknowledgements
 
