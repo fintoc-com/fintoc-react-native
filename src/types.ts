@@ -7,7 +7,7 @@ export type FintocWidgetOptions = Record<string, any>;
 export type WebViewEventName = 'fintocwidget://succeeded' | 'fintocwidget://exit';
 
 /**
- * The event handlers used to handle the WebView redirections.
+ * The event handlers used to handle the View redirections.
  * You can read more here: {@link https://docs.fintoc.com/docs/widget-webview-integration#webview-redirections}.
  */
 export interface FintocWidgetEventHandlers {
@@ -18,8 +18,8 @@ export interface FintocWidgetEventHandlers {
 export type WebViewEventMap = Record<WebViewEventName, keyof FintocWidgetEventHandlers>
 
 /**
- * The props for the Fintoc Widget WebView.
+ * The props for the Fintoc Widget View.
  */
-export type FintocWidgetWebViewPropsType = FintocWidgetEventHandlers & {
+export type FintocWidgetViewPropsType = FintocWidgetEventHandlers & {
   options: FintocWidgetOptions
 }
