@@ -1,7 +1,7 @@
-export { FintocWidgetWebView } from './lib/core';
+export { FintocWidgetView } from './lib/core';
 
 export type {
   FintocWidgetOptions,
   FintocWidgetEventHandlers,
-  FintocWidgetWebViewPropsType,
+  FintocWidgetViewPropsType,
 } from './types';

@@ -1,11 +1,11 @@
 import React from 'react';
 import { WebView } from 'react-native-webview';
 import { View, StyleSheet } from 'react-native';
-import type { FintocWidgetWebViewPropsType } from '../types';
+import type { FintocWidgetViewPropsType } from '../types';
 import { FINTOC_WEBVIEW_URL, FINTOC_BASE_URLS } from './constants';
 import { buildQueryString, buildMessageHandler } from './utils';
 
-export const FintocWidgetWebView = ({ options, handlers }: FintocWidgetWebViewPropsType) => (
+export const FintocWidgetView = ({ options, ...handlers }: FintocWidgetViewPropsType) => (
   // eslint-disable-next-line no-use-before-define
   <View style={styles.wrapper}>
     <WebView
