@@ -5,7 +5,7 @@ import type { FintocWidgetWebViewPropsType } from '../types';
 import { FINTOC_WEBVIEW_URL, FINTOC_BASE_URLS } from './constants';
 import { buildQueryString, buildMessageHandler } from './utils';
 
-export const FintocWidgetWebView = ({ options, handlers }: FintocWidgetWebViewPropsType) => (
+export const FintocWidgetWebView = ({ options, ...handlers }: FintocWidgetWebViewPropsType) => (
   // eslint-disable-next-line no-use-before-define
   <View style={styles.wrapper}>
     <WebView
