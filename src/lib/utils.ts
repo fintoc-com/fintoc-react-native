@@ -4,7 +4,26 @@ import { EVENT_MAP } from './constants';
 
 const defaultHanlder = () => null;
 
-export const buildQueryString = (config: Record<string, string>): string => Object.keys(config).map((key) => `${key}=${config[key]}`).join('&');
+interface QueryObject {
+  [key: string]: string | number | boolean | QueryObject;
+}
+
+export const buildQueryString = (config: QueryObject, configKey?: string): string => {
+  const pairs: string[] = [];
+
+  Object.entries(config).forEach(([key, value]) => {
+    const nestedKey = configKey ? `${configKey}[${encodeURIComponent(key)}]` : encodeURIComponent(key);
+    const valueIsObject = typeof value === 'object' && value !== null && !Array.isArray(value);
+
+    if (valueIsObject) {
+      pairs.push(buildQueryString(value as QueryObject, nestedKey));
+    } else {
+      pairs.push(`${nestedKey}=${encodeURIComponent(String(value))}`);
+    }
+  });
+
+  return pairs.join('&');
+};
 
 export const buildMessageHandler = (handlers: FintocWidgetEventHandlers) => (
   (event: WebViewMessageEvent) => {
