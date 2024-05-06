@@ -30,7 +30,7 @@
     "react-native-webview": "*"
   },
   "devDependencies": {
-    "@types/node": "^17.0.23",
+    "@types/node": "^18.19.31",
     "@types/react": "^17.0.33",
     "@types/react-native": "^0.67.3",
     "@typescript-eslint/eslint-plugin": "^5.16.0",
@@ -46,6 +46,7 @@
     "react-native": "^0.67.4",
     "react-native-webview": "^11.17.2",
     "typescript": "^4.5.4",
-    "vite": "^2.8.0"
+    "vite": "^2.8.0",
+    "vitest": "^1.6.0"
   }
 }
