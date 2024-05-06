@@ -22,7 +22,9 @@
     "build:scripts": "vite build",
     "build:types": "tsc --project tsconfig.build.json --emitDeclarationOnly",
     "lint": "eslint --ext .tx,.ts .",
-    "version:get": "node -p \"require('./package.json').version\""
+    "version:get": "node -p \"require('./package.json').version\"",
+    "test": "vitest run",
+    "test:watch": "vitest"
   },
   "peerDependencies": {
     "react": "*",
