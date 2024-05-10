@@ -7,16 +7,16 @@ on:
 
 jobs:
   npm-release:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     env:
       NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
     steps:
       - uses: actions/checkout@v2
 
-      - name: Set up Node.js v14
-        uses: actions/setup-node@v2
+      - name: Set up Node.js v20
+        uses: actions/setup-node@v4
         with:
-          node-version: 14
+          node-version: '20.9.0'
           registry-url: https://registry.npmjs.org
 
       # Cache the node_modules directory
@@ -40,14 +40,14 @@ jobs:
   github-release:
     needs: npm-release
 
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v2
 
-      - name: Set up Node.js v14
-        uses: actions/setup-node@v1
+      - name: Set up Node.js v20
+        uses: actions/setup-node@v4
         with:
-          node-version: 14
+          node-version: '20.9.0'
 
       # Cache the node_modules directory
       - name: Set up node_modules cache
