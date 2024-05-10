@@ -16,6 +16,9 @@
       "import": "./dist/main.es.js"
     }
   },
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "bump!": "sh scripts/bump.sh",
     "build": "run-p build:*",
