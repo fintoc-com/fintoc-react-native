@@ -1,0 +1,40 @@
+name: build
+
+on:
+  pull_request:
+    paths:
+      - ".github/workflows/build.yml"
+      - "src/**"
+      - "tsconfig.json"
+      - "tsconfig.module.json"
+      - "vite.config.ts"
+      - "package.json"
+      - "package-lock.json"
+
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up Node.js v20
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20.9.0'
+          registry-url: https://registry.npmjs.org
+
+      # Cache the node_modules directory
+      - name: Set up node_modules cache
+        uses: actions/cache@v2
+        id: node-modules-cache
+        with:
+          key: node-modules-cache-${{ hashFiles('**/package-lock.json') }}
+          path: '**/node_modules'
+
+      - name: Install dependencies
+        if: steps.node-modules-cache.outputs.cache-hit != 'true'
+        run: npm ci
+
+      - name: Run build
+        run: npm run build
