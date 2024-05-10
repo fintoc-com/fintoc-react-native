@@ -1,18 +1,18 @@
-name: linters
+name: build
 
 on:
   pull_request:
     paths:
-      - ".github/workflows/linters.yml"
+      - ".github/workflows/build.yml"
       - "src/**"
-      - ".eslintrc.js"
       - "tsconfig.json"
       - "tsconfig.module.json"
+      - "vite.config.ts"
       - "package.json"
       - "package-lock.json"
 
 jobs:
-  eslint:
+  build:
     runs-on: ubuntu-22.04
 
     steps:
@@ -36,5 +36,5 @@ jobs:
         if: steps.node-modules-cache.outputs.cache-hit != 'true'
         run: npm ci
 
-      - name: Lint with ESLint
-        run: npm run lint
+      - name: Run build
+        run: npm run build

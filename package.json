@@ -16,6 +16,9 @@
       "import": "./dist/main.es.js"
     }
   },
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "bump!": "sh scripts/bump.sh",
     "build": "run-p build:*",
@@ -32,7 +35,7 @@
     "react-native-webview": "*"
   },
   "devDependencies": {
-    "@types/node": "^18.19.31",
+    "@types/node": "^20.9.0",
     "@types/react": "^17.0.33",
     "@types/react-native": "^0.67.3",
     "@typescript-eslint/eslint-plugin": "^5.16.0",
