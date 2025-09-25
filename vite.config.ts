@@ -14,9 +14,11 @@ export default defineConfig({
     },
     sourcemap: true,
     rollupOptions: {
-      external: ['react-native', 'react-native-webview'],
+      external: ['react', 'react/jsx-runtime', 'react-native', 'react-native-webview'],
       output: {
         globals: {
+          react: 'React',
+          'react/jsx-runtime': 'jsxRuntime',
           'react-native': 'ReactNative',
           'react-native-webview': 'ReactNativeWebView',
         },
